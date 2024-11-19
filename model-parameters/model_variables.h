@@ -76,7 +76,7 @@ const uint8_t ei_dsp_blocks_size = 1;
 ei_model_dsp_t ei_dsp_blocks[ei_dsp_blocks_size] = {
     { // DSP block 2
         2,
-        30, // output size
+        39, // output size
         &extract_spectral_analysis_features, // DSP function pointer
         (void*)&ei_dsp_config_2, // pointer to config struct
         ei_dsp_config_2_axes, // array of offsets into the input stream, one for each axis
@@ -161,17 +161,17 @@ const ei_impulse_t impulse_562611_0 = {
     .project_name = "mumuvrf-project-1",
     .impulse_id = 1,
     .impulse_name = "Impulse #1",
-    .deploy_version = 1,
+    .deploy_version = 2,
 
-    .nn_input_frame_size = 30,
-    .raw_sample_count = 200,
+    .nn_input_frame_size = 39,
+    .raw_sample_count = 125,
     .raw_samples_per_frame = 3,
-    .dsp_input_frame_size = 200 * 3,
+    .dsp_input_frame_size = 125 * 3,
     .input_width = 0,
     .input_height = 0,
     .input_frames = 0,
-    .interval_ms = 10,
-    .frequency = 100,
+    .interval_ms = 16,
+    .frequency = 62.5,
     .dsp_blocks_size = ei_dsp_blocks_size,
     .dsp_blocks = ei_dsp_blocks,
     
@@ -193,7 +193,7 @@ const ei_impulse_t impulse_562611_0 = {
 
     .sensor = EI_CLASSIFIER_SENSOR_ACCELEROMETER,
     .fusion_string = "accX + accY + accZ",
-    .slice_size = (200/4),
+    .slice_size = (125/4),
     .slices_per_model_window = 4,
 
     .has_anomaly = EI_ANOMALY_TYPE_KMEANS,
